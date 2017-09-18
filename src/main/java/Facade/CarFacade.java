@@ -1,10 +1,14 @@
 package Facade;
 
-import Cars.CarBody;
-import Cars.CarContent;
-import Cars.CarEngine;
-import Cars.CarWheels;
+import CarDetails.CarBody;
+import CarDetails.CarContent;
+import CarDetails.CarEngine;
+import CarDetails.CarWheels;
 
+/**
+ * CarFacde holds 4 classes which every one of these classes responsible for some different work,
+ * in that case for building body,wheels,conent and engine. (User just useing this classes)
+ */
 public class CarFacade {
     private CarBody body;
     private CarWheels wheels;
