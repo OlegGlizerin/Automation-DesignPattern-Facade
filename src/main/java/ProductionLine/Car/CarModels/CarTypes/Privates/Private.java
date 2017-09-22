@@ -6,7 +6,6 @@ import ProductionLine.Car.CarModels.CarTypes.ISport;
 import ProductionLine.Car.CarModels.EModels;
 import ProductionLine.VehicleBase.IMaker;
 import ProductionLine.VehicleBase.VehicleAdapter.VehicleMakerWithDB;
-import ProductionLine.VehicleBase.VehicleMaker;
 
 public class Private implements ISport, IHover, INorma {
 //    private VehicleMaker vehicleBase = null;(adapter used)
@@ -54,5 +53,8 @@ private IMaker vehicleBaseWithDB = null;
         System.out.println("New " + model + " Private has been created.");
     }
 
-
+    @Override
+    public String getCarModel() {
+        return model.toString();
+    }
 }

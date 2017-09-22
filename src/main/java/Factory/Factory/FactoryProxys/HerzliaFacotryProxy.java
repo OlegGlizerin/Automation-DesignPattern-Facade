@@ -2,6 +2,7 @@ package Factory.Factory.FactoryProxys;
 
 import Factory.Factory.HerzliaFactory;
 import Factory.Factory.IFactory;
+import ProductionLine.Car.CarModels.EModels;
 import ProductionLine.Car.ICar;
 
 public class HerzliaFacotryProxy implements IFactory {
@@ -20,5 +21,10 @@ public class HerzliaFacotryProxy implements IFactory {
             herzliaFactory = new HerzliaFactory();
         }
         herzliaFactory.buildCar(car);
+    }
+
+    @Override
+    public ICar getCar(EModels model) {
+        return herzliaFactory.getCar(model);
     }
 }

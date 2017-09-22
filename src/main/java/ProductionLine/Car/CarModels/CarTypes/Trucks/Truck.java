@@ -5,7 +5,6 @@ import ProductionLine.Car.CarModels.CarTypes.ISport;
 import ProductionLine.Car.CarModels.EModels;
 import ProductionLine.VehicleBase.IMaker;
 import ProductionLine.VehicleBase.VehicleAdapter.VehicleMakerWithDB;
-import ProductionLine.VehicleBase.VehicleMaker;
 
 public class Truck implements ISport,INorma {
 //    private VehicleMaker vehicleBase = null;(adapter used)
@@ -45,5 +44,9 @@ private IMaker vehicleBaseWithDB = null;
 //        vehicleBase.buildVehicle();(adapter used)
         vehicleBaseWithDB.buildVehicle();
         System.out.println("New " + model + " Truck has been created.");
+    }
+    @Override
+    public String getCarModel() {
+        return model.toString();
     }
 }

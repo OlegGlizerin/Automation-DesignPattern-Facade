@@ -2,6 +2,7 @@ package Factory.Factory.FactoryProxys;
 
 import Factory.Factory.IFactory;
 import Factory.Factory.PetahTikvaFactory;
+import ProductionLine.Car.CarModels.EModels;
 import ProductionLine.Car.ICar;
 
 public class PetahTikvaFactoryProxy implements IFactory {
@@ -21,5 +22,10 @@ public class PetahTikvaFactoryProxy implements IFactory {
             petahTikvaFactory = new PetahTikvaFactory();
         }
         petahTikvaFactory.buildCar(car);
+    }
+
+    @Override
+    public ICar getCar(EModels model) {
+        return petahTikvaFactory.getCar(model);
     }
 }

@@ -1,9 +1,10 @@
-package ProductionLine.VehicleBase;
+package ProductionLine.VehicleBase.VehicleWithoutAdapter;
 
 import ProductionLine.Car.CarDetails.CarBody;
 import ProductionLine.Car.CarDetails.CarContent;
 import ProductionLine.Car.CarDetails.CarEngine;
 import ProductionLine.Car.CarDetails.CarWheels;
+import ProductionLine.VehicleBase.IMaker;
 
 /**
  * CarFacde holds 4 classes which every one of these classes responsible for some different work,
@@ -22,6 +23,10 @@ public class VehicleMaker implements IMaker {
         engine = new CarEngine();
     }
 
+    /**
+     * Facade pattern used here - lets it was to complex for the client (Bike,Jeep,Private or Truck in this case), so the solution is
+     * to create a class that allows to run all this functionality at one function - buildVehicle()
+     */
     @Override
     public void buildVehicle() {
         System.out.println("Build car started.");

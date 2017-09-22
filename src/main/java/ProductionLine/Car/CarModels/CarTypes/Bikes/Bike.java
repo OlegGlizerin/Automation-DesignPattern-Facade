@@ -7,7 +7,6 @@ import ProductionLine.Car.CarModels.CarTypes.ISport;
 import ProductionLine.Car.CarModels.EModels;
 import ProductionLine.VehicleBase.IMaker;
 import ProductionLine.VehicleBase.VehicleAdapter.VehicleMakerWithDB;
-import ProductionLine.VehicleBase.VehicleMaker;
 
 public class Bike implements ISport,IHover,INorma,IFourXFour {
 //    private VehicleMaker vehicleBase = null;  (adapter used)
@@ -58,5 +57,10 @@ public class Bike implements ISport,IHover,INorma,IFourXFour {
 //        vehicleBase.buildVehicle();   (adapter used)
         vehicleBaseWithDB.buildVehicle();
         System.out.println("New " + model + " Bike has been created.");
+    }
+
+    @Override
+    public String getCarModel() {
+        return model.toString();
     }
 }

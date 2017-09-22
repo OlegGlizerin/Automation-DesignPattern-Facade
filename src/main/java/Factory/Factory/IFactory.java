@@ -1,5 +1,6 @@
 package Factory.Factory;
 
+import ProductionLine.Car.CarModels.EModels;
 import ProductionLine.Car.ICar;
 
 
@@ -8,4 +9,5 @@ import ProductionLine.Car.ICar;
  */
 public interface IFactory {
     void buildCar(ICar car);
+    ICar getCar(EModels model);
 }
