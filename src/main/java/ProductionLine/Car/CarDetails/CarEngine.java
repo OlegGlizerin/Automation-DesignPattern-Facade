@@ -3,7 +3,7 @@ package ProductionLine.Car.CarDetails;
 import ProductionLine.Car.CarDetails.Component.IComponent;
 
 /**
- * Class that responsible to create the engine of the car
+ * Class that responsible to create the engine of the car, its a leaf of the composite design pattern
  */
 public class CarEngine implements IComponent{
     private String name = null;

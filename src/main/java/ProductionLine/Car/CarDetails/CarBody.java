@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * Class that responsible to create the body of the car with Composite design pattern.
+ * This is the composite that holds many leafs like wheels, content of the car and engine...
  */
 public class CarBody implements IComponent{
     private List<IComponent> components = new ArrayList<IComponent>();
