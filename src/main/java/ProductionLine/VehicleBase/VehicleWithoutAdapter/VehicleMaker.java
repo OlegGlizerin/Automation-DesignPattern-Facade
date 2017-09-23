@@ -4,6 +4,7 @@ import ProductionLine.Car.CarDetails.CarBody;
 import ProductionLine.Car.CarDetails.CarContent;
 import ProductionLine.Car.CarDetails.CarEngine;
 import ProductionLine.Car.CarDetails.CarWheels;
+import ProductionLine.Car.CarDetails.Component.IComponent;
 import ProductionLine.VehicleBase.IMaker;
 
 /**
@@ -12,15 +13,18 @@ import ProductionLine.VehicleBase.IMaker;
  */
 public class VehicleMaker implements IMaker {
     private CarBody body;
-    private CarWheels wheels;
-    private CarContent content;
-    private CarEngine engine;
+    private IComponent wheels;
+    private IComponent content;
+    private IComponent engine;
 
     public VehicleMaker() {
-        body = new CarBody();
-        wheels = new CarWheels();
-        content = new CarContent();
-        engine = new CarEngine();
+        body = new CarBody("Car Body Composite");
+        wheels = new CarWheels("Car Wheels Leaf");
+        content = new CarContent("Car Content Leaf");
+        engine = new CarEngine("Car Engine Leaf");
+        body.addComponent(wheels);
+        body.addComponent(content);
+        body.addComponent(engine);
     }
 
     /**
@@ -30,10 +34,7 @@ public class VehicleMaker implements IMaker {
     @Override
     public void buildVehicle() {
         System.out.println("Build car started.");
-        body.makeBody();
-        wheels.makeWheels();
-        content.makeContent();
-        engine.makeEngine();
+        body.make();
         System.out.println("Build car finished.");
     }
 }
