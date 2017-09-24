@@ -26,7 +26,7 @@ public class HerzliaFactory implements IFactory {
 
     public IVehicle getVehicle(EModels model) {
         for(IVehicle vehicle: vehicles) {
-            if(vehicle.getVehicleModel().toString().equals(model.toString())) {
+            if(vehicle.getVehicleModel().equals(model.toString())) {
                 return vehicle;
             }
         }

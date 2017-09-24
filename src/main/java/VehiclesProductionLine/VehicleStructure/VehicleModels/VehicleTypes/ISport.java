@@ -1,6 +1,6 @@
-package VehiclesProductionLine.VehicleSkeleton.VehicleModels.VehicleTypes;
+package VehiclesProductionLine.VehicleStructure.VehicleModels.VehicleTypes;
 
-import VehiclesProductionLine.VehicleSkeleton.IVehicle;
+import VehiclesProductionLine.VehicleStructure.IVehicle;
 
 public interface ISport extends IVehicle {
     void sportAbility();

@@ -1,6 +1,6 @@
 package VehiclesWarehouse;
 
-import VehiclesProductionLine.VehicleSkeleton.IVehicle;
+import VehiclesProductionLine.VehicleStructure.IVehicle;
 import VehiclesWarehouse.ExportCars.IExporter;
 
 public abstract class AbstractWarehouse {

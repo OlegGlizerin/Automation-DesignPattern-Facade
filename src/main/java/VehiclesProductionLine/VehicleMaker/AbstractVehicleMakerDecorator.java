@@ -1,6 +1,5 @@
 package VehiclesProductionLine.VehicleMaker;
 
-import VehiclesProductionLine.VehicleStructure.IVehicle;
 
 public class AbstractVehicleMakerDecorator implements IMaker {
    protected IMaker maker = null;

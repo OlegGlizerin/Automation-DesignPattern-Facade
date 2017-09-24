@@ -1,6 +1,6 @@
-package VehiclesProductionLine.VehicleSkeleton.VehicleDetails;
+package VehiclesProductionLine.VehicleStructure.VehicleDetails;
 
-import VehiclesProductionLine.VehicleSkeleton.VehicleDetails.Component.IComponent;
+import VehiclesProductionLine.VehicleStructure.VehicleDetails.Component.IComponent;
 
 /**
  * Class that responsible to create the wheels of the car, its a leaf of the composite design pattern

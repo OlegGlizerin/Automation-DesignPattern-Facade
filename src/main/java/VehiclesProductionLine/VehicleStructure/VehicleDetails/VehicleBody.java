@@ -1,6 +1,6 @@
-package VehiclesProductionLine.VehicleSkeleton.VehicleDetails;
+package VehiclesProductionLine.VehicleStructure.VehicleDetails;
 
-import VehiclesProductionLine.VehicleSkeleton.VehicleDetails.Component.IComponent;
+import VehiclesProductionLine.VehicleStructure.VehicleDetails.Component.IComponent;
 
 import java.util.ArrayList;
 import java.util.List;
