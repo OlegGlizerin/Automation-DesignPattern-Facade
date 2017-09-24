@@ -1,34 +1,34 @@
 package VehiclesCityFactories;
 
 
-import VehiclesProductionLine.VehicleSkeleton.VehicleModels.EModels;
-import VehiclesProductionLine.VehicleSkeleton.IVehicle;
+import VehiclesProductionLine.VehicleStructure.VehicleModels.EModels;
+import VehiclesProductionLine.VehicleStructure.IVehicle;
 
 import java.util.ArrayList;
 
 public class PetahTikvaFactory implements IFactory {
 
-    private ArrayList<IVehicle> cars = new ArrayList<IVehicle>();
+    private ArrayList<IVehicle> vehicles = new ArrayList<IVehicle>();
 
     /**
      * This is a specific factory located at PetahTikva
-     * @param car - a car we want to build
+     * @param vehicle - a vehicle we want to build
      */
     @Override
-    public void buildCar(IVehicle car) {
-        car.construct();
-        add(car);
+    public void buildVehicle(IVehicle vehicle) {
+        vehicle.construct();
+        add(vehicle);
     }
 
 
-    private void add(IVehicle car) {
-        this.cars.add(car);
+    private void add(IVehicle vehicle) {
+        this.vehicles.add(vehicle);
     }
 
-    public IVehicle getCar(EModels model) {
-        for(IVehicle car: cars) {
-            if(car.getCarModel().toString().equals(model.toString())) {
-                return car;
+    public IVehicle getVehicle(EModels model) {
+        for(IVehicle vehicle: vehicles) {
+            if(vehicle.getVehicleModel().toString().equals(model.toString())) {
+                return vehicle;
             }
         }
         return null;

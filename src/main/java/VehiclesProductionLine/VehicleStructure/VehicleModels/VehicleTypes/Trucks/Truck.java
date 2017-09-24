@@ -1,19 +1,19 @@
 package VehiclesProductionLine.VehicleSkeleton.VehicleModels.VehicleTypes.Trucks;
 
+import VehiclesProductionLine.VehicleMaker.VehicleMakerWithoutDBDecorator.VehicleMaker;
 import VehiclesProductionLine.VehicleSkeleton.VehicleModels.VehicleTypes.INorma;
 import VehiclesProductionLine.VehicleSkeleton.VehicleModels.VehicleTypes.ISport;
 import VehiclesProductionLine.VehicleSkeleton.VehicleModels.EModels;
 import VehiclesProductionLine.VehicleMaker.IMaker;
-import VehiclesProductionLine.VehicleMaker.VehicleMakerDBAdapter.VehicleMakerWithDB;
+import VehiclesProductionLine.VehicleMaker.VehicleMakerDBDecorator.VehicleMakerWithDB;
 
 public class Truck implements ISport,INorma {
-//    private VehicleMaker vehicleBase = null;(adapter used)
-private IMaker vehicleBaseWithDB = null;
+
+    private IMaker vehicleBaseWithDB = null;
     private EModels model = null;
 
     public Truck(EModels model) {
-//        vehicleBase = new VehicleMaker();(adapter used)
-        vehicleBaseWithDB = new VehicleMakerWithDB();
+        vehicleBaseWithDB = new VehicleMaker(); //decorator used here
         this.model = model;
     }
 
@@ -41,12 +41,11 @@ private IMaker vehicleBaseWithDB = null;
 
     @Override
     public void construct() {
-//        vehicleBase.buildVehicle();(adapter used)
         vehicleBaseWithDB.buildVehicle();
         System.out.println("New " + model + " Truck has been created.");
     }
     @Override
-    public String getCarModel() {
+    public String getVehicleModel() {
         return model.toString();
     }
 }

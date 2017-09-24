@@ -1,11 +1,11 @@
 package VehiclesCityFactories.VehicleTypes;
 
-public enum EVehicleTypes {
+public enum EPetahTikvaVehicleTypes {
     BIKE,JEEP,PRIVATE,TRUCK;
 
     public static boolean contains(String otherModel) {
 
-        for (EVehicleTypes model : EVehicleTypes.values()) {
+        for (EHerzliaVehicleTypes model : EHerzliaVehicleTypes.values()) {
             if (model.name().equals(otherModel)) {
                 return true;
             }
@@ -13,4 +13,5 @@ public enum EVehicleTypes {
 
         return false;
     }
+
 }

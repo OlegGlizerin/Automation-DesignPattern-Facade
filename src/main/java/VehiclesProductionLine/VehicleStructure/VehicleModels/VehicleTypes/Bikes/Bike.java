@@ -1,21 +1,21 @@
 package VehiclesProductionLine.VehicleSkeleton.VehicleModels.VehicleTypes.Bikes;
 
+import VehiclesProductionLine.VehicleMaker.VehicleMakerWithoutDBDecorator.VehicleMaker;
 import VehiclesProductionLine.VehicleSkeleton.VehicleModels.VehicleTypes.IFourXFour;
 import VehiclesProductionLine.VehicleSkeleton.VehicleModels.VehicleTypes.IHover;
 import VehiclesProductionLine.VehicleSkeleton.VehicleModels.VehicleTypes.INorma;
 import VehiclesProductionLine.VehicleSkeleton.VehicleModels.VehicleTypes.ISport;
 import VehiclesProductionLine.VehicleSkeleton.VehicleModels.EModels;
 import VehiclesProductionLine.VehicleMaker.IMaker;
-import VehiclesProductionLine.VehicleMaker.VehicleMakerDBAdapter.VehicleMakerWithDB;
+import VehiclesProductionLine.VehicleMaker.VehicleMakerDBDecorator.VehicleMakerWithDB;
 
 public class Bike implements ISport,IHover,INorma,IFourXFour {
-//    private VehicleMaker vehicleBase = null;  (adapter used)
+
     private IMaker vehicleBaseWithDB = null;
     private EModels model = null;
 
     public Bike(EModels model) {
-//        vehicleBase = new VehicleMaker();  (adapter used)
-        vehicleBaseWithDB = new VehicleMakerWithDB();
+        vehicleBaseWithDB = new VehicleMakerWithDB(new VehicleMaker());
         this.model = model;
     }
 
@@ -54,13 +54,12 @@ public class Bike implements ISport,IHover,INorma,IFourXFour {
 
     @Override
     public void construct() {
-//        vehicleBase.buildVehicle();   (adapter used)
         vehicleBaseWithDB.buildVehicle();
         System.out.println("New " + model + " Bike has been created.");
     }
 
     @Override
-    public String getCarModel() {
+    public String getVehicleModel() {
         return model.toString();
     }
 }

@@ -1,15 +1,15 @@
 package VehiclesWarehouse.ExportCars;
 
-import VehiclesProductionLine.VehicleSkeleton.IVehicle;
+import VehiclesProductionLine.VehicleStructure.IVehicle;
 
 public class USAExporter implements IExporter {
 
     /**
      * Export car to USA
-     * @param car - sell the car
+     * @param vehicle - sell the vehicle
      */
     @Override
-    public void export(IVehicle car) {
-        System.out.println("Export the car " + car.getCarModel() + "to USA.");
+    public void export(IVehicle vehicle) {
+        System.out.println("Export the car " + vehicle.getVehicleModel() + "to USA.");
     }
 }

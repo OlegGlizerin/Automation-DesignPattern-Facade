@@ -1,13 +1,13 @@
 package VehiclesCityFactories;
 
-import VehiclesProductionLine.VehicleSkeleton.VehicleModels.EModels;
-import VehiclesProductionLine.VehicleSkeleton.IVehicle;
+import VehiclesProductionLine.VehicleStructure.VehicleModels.EModels;
+import VehiclesProductionLine.VehicleStructure.IVehicle;
 
 
 /**
  * The Factory Interface.
  */
 public interface IFactory {
-    void buildCar(IVehicle car);
-    IVehicle getCar(EModels model);
+    void buildVehicle(IVehicle car);
+    IVehicle getVehicle(EModels model);
 }

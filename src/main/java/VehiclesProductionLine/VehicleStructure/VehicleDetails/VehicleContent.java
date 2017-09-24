@@ -3,12 +3,12 @@ package VehiclesProductionLine.VehicleSkeleton.VehicleDetails;
 import VehiclesProductionLine.VehicleSkeleton.VehicleDetails.Component.IComponent;
 
 /**
- * Class that responsible to create the wheels of the car, its a leaf of the composite design pattern
+ * Class that responsible to create the content of the car, its a leaf of the composite design pattern
  */
-public class CarWheels implements IComponent{
+public class VehicleContent implements IComponent{
     private String name = null;
 
-    public CarWheels(String name) {
+    public VehicleContent(String name) {
         this.name = name;
     }
     @Override

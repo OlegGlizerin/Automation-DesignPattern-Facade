@@ -1,6 +1,6 @@
 package VehiclesWarehouse;
 
-import VehiclesProductionLine.VehicleSkeleton.IVehicle;
+import VehiclesProductionLine.VehicleStructure.IVehicle;
 import VehiclesWarehouse.ExportCars.IExporter;
 
 /**
@@ -16,11 +16,11 @@ public class HerzliaWarehouse extends AbstractWarehouse {
 
     /**
      * seel the car using exporter
-     * @param car - the car we want to sell
+     * @param vehicle - the vehicle we want to sell
      */
     @Override
-    public void sellCar(IVehicle car) {
-        exporter.export(car);
-        System.out.println("VehicleSkeleton sold " + car.getCarModel());
+    public void sellCar(IVehicle vehicle) {
+        exporter.export(vehicle);
+        System.out.println("Vehicle: " + vehicle.getClass().getSimpleName() + ", Model: " + vehicle.getVehicleModel() + ", is sold.");
     }
 }

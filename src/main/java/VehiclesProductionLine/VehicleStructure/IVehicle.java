@@ -4,5 +4,5 @@ public interface IVehicle {
     void drive();
     void printAbilities();
     void construct();
-    String getCarModel();
+    String getVehicleModel();
 }
