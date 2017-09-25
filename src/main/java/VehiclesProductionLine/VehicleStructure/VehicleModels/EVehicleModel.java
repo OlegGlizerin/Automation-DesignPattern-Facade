@@ -1,5 +1,5 @@
 package VehiclesProductionLine.VehicleStructure.VehicleModels;
 
-public enum EModels {
+public enum EVehicleModel {
     HONDA, MAZDA, MERCEDES;
 }

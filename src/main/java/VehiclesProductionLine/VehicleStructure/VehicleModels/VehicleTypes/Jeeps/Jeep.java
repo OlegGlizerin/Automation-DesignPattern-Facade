@@ -1,19 +1,20 @@
 package VehiclesProductionLine.VehicleStructure.VehicleModels.VehicleTypes.Jeeps;
 
 import VehiclesProductionLine.VehicleMaker.VehicleMakerWithoutDBDecorator.VehicleMaker;
+import VehiclesProductionLine.VehicleStructure.VehicleModels.EVehicleType;
 import VehiclesProductionLine.VehicleStructure.VehicleModels.VehicleTypes.IFourXFour;
 import VehiclesProductionLine.VehicleStructure.VehicleModels.VehicleTypes.INorma;
 import VehiclesProductionLine.VehicleStructure.VehicleModels.VehicleTypes.ISport;
-import VehiclesProductionLine.VehicleStructure.VehicleModels.EModels;
+import VehiclesProductionLine.VehicleStructure.VehicleModels.EVehicleModel;
 import VehiclesProductionLine.VehicleMaker.IMaker;
 import VehiclesProductionLine.VehicleMaker.VehicleMakerDBDecorator.VehicleMakerWithDB;
 
 public class Jeep implements ISport, IFourXFour, INorma {
 
     private IMaker vehicleBaseWithDB = null;
-    private EModels model= null;
+    private EVehicleModel model= null;
     private boolean isConstructed = false;
-    public Jeep(EModels model) {
+    public Jeep(EVehicleModel model) {
         vehicleBaseWithDB = new VehicleMakerWithDB(new VehicleMaker());
         this.model = model;
     }
@@ -54,8 +55,12 @@ public class Jeep implements ISport, IFourXFour, INorma {
     }
 
     @Override
-    public String getVehicleModel() {
-        return model.toString();
+    public EVehicleModel getVehicleModel() {
+        return model;
+    }
+    @Override
+    public EVehicleType getVehicleType() {
+        return EVehicleType.getByType(this.getClass().getSimpleName().toUpperCase());
     }
     @Override
     public boolean isConstructed() {

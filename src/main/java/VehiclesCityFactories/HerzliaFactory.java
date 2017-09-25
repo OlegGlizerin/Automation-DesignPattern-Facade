@@ -1,13 +1,13 @@
 package VehiclesCityFactories;
 
-import VehiclesProductionLine.VehicleStructure.VehicleModels.EModels;
 import VehiclesProductionLine.VehicleStructure.IVehicle;
+import VehiclesProductionLine.VehicleStructure.VehicleModels.EVehicleType;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class HerzliaFactory implements IFactory {
 
-    private ArrayList<IVehicle> vehicles = new ArrayList<IVehicle>();
+    private static final HashMap<EVehicleType, IVehicle> vehicles = new HashMap();
 
     /**
      * This is a specific factory located at Herzlia
@@ -21,12 +21,14 @@ public class HerzliaFactory implements IFactory {
 
 
     private void add(IVehicle vehicle) {
-        this.vehicles.add(vehicle);
+        if(!this.vehicles.containsKey(vehicle.getVehicleType())) {
+            this.vehicles.put(EVehicleType.getByType(vehicle.getVehicleType().name()), vehicle);
+        }
     }
 
-    public IVehicle getVehicle(EModels model) {
-        for(IVehicle vehicle: vehicles) {
-            if(vehicle.getVehicleModel().equals(model.toString())) {
+    public IVehicle getVehicle(EVehicleType vehicleType) {
+        for(IVehicle vehicle: vehicles.values()) {
+            if(vehicle.getVehicleType().equals(vehicleType)) {
                 return vehicle;
             }
         }

@@ -2,12 +2,11 @@ package VehiclesProductionLine.VehicleMaker.VehicleMakerDBDecorator;
 
 import VehiclesProductionLine.DBManagement.DBManagers.DBMySQLManager;
 import VehiclesProductionLine.DBManagement.IDBMongo;
-import VehiclesProductionLine.DBManagement.IDBMySQL;
 import VehiclesProductionLine.DBManagement.MySQLToMongoDBAdapter.MySQLToMongoAdapter;
-import VehiclesProductionLine.VehicleMaker.AbstractVehicleMakerDecorator;
+import VehiclesProductionLine.VehicleMaker.VehicleMakerDecorator;
 import VehiclesProductionLine.VehicleMaker.IMaker;
 
-public class VehicleMakerWithDB extends AbstractVehicleMakerDecorator{
+public class VehicleMakerWithDB extends VehicleMakerDecorator {
     private IDBMongo mySQLToMongoAdapter = null;
 
     /**

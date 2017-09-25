@@ -1,6 +1,7 @@
 package VehiclesProductionLine.VehicleMaker.VehicleMakerWithoutDBDecorator;
 
-import VehiclesProductionLine.VehicleMaker.AbstractVehicleMakerDecorator;
+import VehiclesProductionLine.VehicleMaker.IMaker;
+import VehiclesProductionLine.VehicleMaker.VehicleMakerDecorator;
 import VehiclesProductionLine.VehicleStructure.VehicleDetails.VehicleBody;
 import VehiclesProductionLine.VehicleStructure.VehicleDetails.VehicleContent;
 import VehiclesProductionLine.VehicleStructure.VehicleDetails.VehicleEngine;
@@ -11,7 +12,7 @@ import VehiclesProductionLine.VehicleStructure.VehicleDetails.Component.ICompone
  * VehicleFacde holds 4 classes which every one of these classes responsible for some different work,
  * in that case for building body,wheels,conent and engine. (User just using this classes)
  */
-public class VehicleMaker extends AbstractVehicleMakerDecorator {
+public class VehicleMaker implements IMaker {
     private VehicleBody body;
     private IComponent wheels;
     private IComponent content;

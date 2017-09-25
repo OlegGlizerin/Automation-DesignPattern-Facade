@@ -1,17 +1,18 @@
 package VehiclesProductionLine.VehicleStructure.VehicleModels.VehicleTypes.Trucks;
 
 import VehiclesProductionLine.VehicleMaker.VehicleMakerWithoutDBDecorator.VehicleMaker;
+import VehiclesProductionLine.VehicleStructure.VehicleModels.EVehicleType;
 import VehiclesProductionLine.VehicleStructure.VehicleModels.VehicleTypes.INorma;
 import VehiclesProductionLine.VehicleStructure.VehicleModels.VehicleTypes.ISport;
-import VehiclesProductionLine.VehicleStructure.VehicleModels.EModels;
+import VehiclesProductionLine.VehicleStructure.VehicleModels.EVehicleModel;
 import VehiclesProductionLine.VehicleMaker.IMaker;
 
 public class Truck implements ISport,INorma {
 
     private IMaker vehicleBaseWithDB = null;
-    private EModels model = null;
+    private EVehicleModel model = null;
     private boolean isConstructed = false;
-    public Truck(EModels model) {
+    public Truck(EVehicleModel model) {
         vehicleBaseWithDB = new VehicleMaker(); //decorator used here
         this.model = model;
     }
@@ -45,8 +46,13 @@ public class Truck implements ISport,INorma {
         isConstructed = true;
     }
     @Override
-    public String getVehicleModel() {
-        return model.toString();
+    public EVehicleModel getVehicleModel() {
+        return model;
+    }
+
+    @Override
+    public EVehicleType getVehicleType() {
+        return EVehicleType.getByType(this.getClass().getSimpleName().toUpperCase());
     }
     @Override
     public boolean isConstructed() {

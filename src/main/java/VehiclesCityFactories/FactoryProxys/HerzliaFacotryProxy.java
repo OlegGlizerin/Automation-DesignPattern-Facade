@@ -2,8 +2,9 @@ package VehiclesCityFactories.FactoryProxys;
 
 import VehiclesCityFactories.HerzliaFactory;
 import VehiclesCityFactories.IFactory;
-import VehiclesProductionLine.VehicleStructure.VehicleModels.EModels;
+import VehiclesProductionLine.VehicleStructure.VehicleModels.EVehicleModel;
 import VehiclesProductionLine.VehicleStructure.IVehicle;
+import VehiclesProductionLine.VehicleStructure.VehicleModels.EVehicleType;
 
 public class HerzliaFacotryProxy implements IFactory {
     private HerzliaFactory herzliaFactory = null;
@@ -24,7 +25,7 @@ public class HerzliaFacotryProxy implements IFactory {
     }
 
     @Override
-    public IVehicle getVehicle(EModels model) {
-        return herzliaFactory.getVehicle(model);
+    public IVehicle getVehicle(EVehicleType type) {
+        return herzliaFactory.getVehicle(type);
     }
 }

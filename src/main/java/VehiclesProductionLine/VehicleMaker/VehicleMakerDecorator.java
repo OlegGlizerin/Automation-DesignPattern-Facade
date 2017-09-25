@@ -1,14 +1,14 @@
 package VehiclesProductionLine.VehicleMaker;
 
 
-public class AbstractVehicleMakerDecorator implements IMaker {
+public class VehicleMakerDecorator implements IMaker {
    protected IMaker maker = null;
 
-   public AbstractVehicleMakerDecorator() {
+   public VehicleMakerDecorator() {
 
    }
 
-    public AbstractVehicleMakerDecorator(IMaker maker) {
+    public VehicleMakerDecorator(IMaker maker) {
         this.maker = maker;
     }
 

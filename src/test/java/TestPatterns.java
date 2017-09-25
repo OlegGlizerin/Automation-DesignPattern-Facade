@@ -1,7 +1,9 @@
 import VehiclesCityFactories.FactoryProxys.HerzliaFacotryProxy;
+import VehiclesCityFactories.VehicleTypesByCity.EHerzliaVehicleTypes;
 import VehiclesProductionLine.VehicleStructure.IVehicle;
+import VehiclesProductionLine.VehicleStructure.VehicleModels.EVehicleType;
 import VehiclesProductionLine.VehicleStructure.VehicleModels.VehicleTypes.Bikes.Bike;
-import VehiclesProductionLine.VehicleStructure.VehicleModels.EModels;
+import VehiclesProductionLine.VehicleStructure.VehicleModels.EVehicleModel;
 import VehiclesProductionLine.VehicleStructure.VehicleModels.VehicleTypes.Trucks.Truck;
 import VehiclesWarehouse.ExportCars.USAExporter;
 import VehiclesWarehouse.HerzliaWarehouse;
@@ -16,15 +18,20 @@ public class TestPatterns {
    @org.testng.annotations.Test
     public void carBuildTest() {
        HerzliaFacotryProxy herzliaFacotryProxy = new HerzliaFacotryProxy();
-       herzliaFacotryProxy.buildVehicle(new Bike(EModels.HONDA));
-       herzliaFacotryProxy.buildVehicle(new Truck(EModels.HONDA));
+       herzliaFacotryProxy.buildVehicle(new Bike(EVehicleModel.HONDA));
+       herzliaFacotryProxy.buildVehicle(new Bike(EVehicleModel.HONDA));
+       herzliaFacotryProxy.buildVehicle(new Bike(EVehicleModel.MAZDA));
+       herzliaFacotryProxy.buildVehicle(new Bike(EVehicleModel.MAZDA));
+       herzliaFacotryProxy.buildVehicle(new Bike(EVehicleModel.HONDA));
+       herzliaFacotryProxy.buildVehicle(new Truck(EVehicleModel.HONDA));
 
 
-       IVehicle car = herzliaFacotryProxy.getVehicle(EModels.HONDA);
+       IVehicle vehicle = herzliaFacotryProxy.getVehicle(EVehicleType.BIKE);
        HerzliaWarehouse herzliaWarehouse = new HerzliaWarehouse(new USAExporter());
-       herzliaWarehouse.sellCar(car);
+       herzliaWarehouse.sellCar(vehicle);
 
-       System.out.println(car.isConstructed());
+       System.out.println(vehicle.isConstructed());
+
 
     }
 }

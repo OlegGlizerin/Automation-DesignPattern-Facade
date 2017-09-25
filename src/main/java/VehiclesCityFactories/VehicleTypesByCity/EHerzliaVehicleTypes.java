@@ -1,4 +1,4 @@
-package VehiclesCityFactories.VehicleTypes;
+package VehiclesCityFactories.VehicleTypesByCity;
 
 public enum EHerzliaVehicleTypes {
     BIKE,JEEP,PRIVATE;

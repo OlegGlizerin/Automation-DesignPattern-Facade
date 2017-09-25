@@ -2,8 +2,9 @@ package VehiclesCityFactories.FactoryProxys;
 
 import VehiclesCityFactories.IFactory;
 import VehiclesCityFactories.PetahTikvaFactory;
-import VehiclesProductionLine.VehicleStructure.VehicleModels.EModels;
+import VehiclesProductionLine.VehicleStructure.VehicleModels.EVehicleModel;
 import VehiclesProductionLine.VehicleStructure.IVehicle;
+import VehiclesProductionLine.VehicleStructure.VehicleModels.EVehicleType;
 
 public class PetahTikvaFactoryProxy implements IFactory {
     private PetahTikvaFactory petahTikvaFactory = null;
@@ -25,7 +26,7 @@ public class PetahTikvaFactoryProxy implements IFactory {
     }
 
     @Override
-    public IVehicle getVehicle(EModels model) {
-        return petahTikvaFactory.getVehicle(model);
+    public IVehicle getVehicle(EVehicleType type) {
+        return petahTikvaFactory.getVehicle(type);
     }
 }
