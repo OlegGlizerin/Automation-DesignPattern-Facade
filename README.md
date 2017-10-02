@@ -25,13 +25,13 @@ The code modeling should contain the next design patterns:
 
 These are the must guide lines in the project, feel free to assume some other functionality if needed.
 
-Types:
+**Types:**
 - Private (S, H, N)
 - Bike (S, H, N, F)
 - Truck (S, N)
 - Jeep (S, F, N)
 
-Abilities:
+**Abilities:**
 Sport, Hover, Norma, FourXFour
 
 
