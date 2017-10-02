@@ -27,7 +27,6 @@ Types:
 - Bike (S, H, N, F)
 - Truck (S, N)
 - Jeep (S, F, N)
-
 Abilities:
 Sport, Hover, Norma, FourXFour
 
