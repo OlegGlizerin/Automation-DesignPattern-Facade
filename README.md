@@ -1,7 +1,7 @@
 # DesignPatterns-VehicleFacility
 Vehicle Factory exercise, using structural and creational design modeling.
 
-**Vehicle Factory task**
+**Vehicle Factory task**\n
 The code modeling should contain the next design patterns:
 1)Structural design patterns - (Adapter, Facade, Bridge, Composite Decorator, FlyWeight, Proxy)
 2)Creational deisgn patterns - (Abstract Factory, Builder, Factory Method, Object Pool, Prototype)
