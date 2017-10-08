@@ -1,24 +1,25 @@
-import VehiclesAndToysWarehouse.CreateVehicleToys.UsingToysObjectPool.PooledToyObject;
-import VehiclesAndToysWarehouse.CreateVehicleToys.UsingToysObjectPool.ToyPool;
-import VehiclesCityEnterprises.Proxys.HerzliaEnterpriseProxy;
-import VehiclesProductionLine.Vehicles.IVehicle;
-import VehiclesProductionLine.Vehicles.Models.EVehicleType;
-import VehiclesProductionLine.Vehicles.Models.Types.Bikes.Bike;
-import VehiclesProductionLine.Vehicles.Models.EVehicleModel;
-import VehiclesProductionLine.Vehicles.Models.Types.Trucks.Truck;
+import BridgeExportVehicles.ExportVehicles.USAExporter;
+import BuilderFactoryObjectPoolPrototypeToysCreation.CreateVehicleToys.ObjectPool.PooledToyObject;
+import BuilderFactoryObjectPoolPrototypeToysCreation.CreateVehicleToys.ObjectPool.ToyPool;
+import ProxyVehiclesCityEnterprises.Proxys.HerzliaEnterpriseProxy;
+import FacadeDecoratorAdapterCompositeFlyWeightVehiclesProductionLine.Vehicles.IVehicle;
+import FacadeDecoratorAdapterCompositeFlyWeightVehiclesProductionLine.Vehicles.EVehicleType;
+import FacadeDecoratorAdapterCompositeFlyWeightVehiclesProductionLine.Vehicles.FlyWeightAndPrototypeVehicles.Models.Bikes.Bike;
+import FacadeDecoratorAdapterCompositeFlyWeightVehiclesProductionLine.Vehicles.EVehicleModel;
+import FacadeDecoratorAdapterCompositeFlyWeightVehiclesProductionLine.Vehicles.FlyWeightAndPrototypeVehicles.Models.Trucks.Truck;
 import org.testng.annotations.Test;
 
 
 /**
  * Let's say the client want to build a vehicle,
- * so we give him the VehicleMaker that easy can make a good vehicle with it's identical abilities.
+ * so we give him the FacadeAdapterDecoratorVehicleMaker that easy can make a good vehicle with it's identical abilities.
  * Structural patterns used (Adapter,Facade,Decorator,Proxy,FlyWeight,Bridge,Composite) , also creational pattern used (Builder,Prototype,Abstract Factory) .
  */
 public class TestPatterns {
 
    @Test
     public void carBuildTest() throws ClassNotFoundException, IllegalAccessException, InstantiationException, CloneNotSupportedException {
-       HerzliaEnterpriseProxy herzliaEnterpriseProxy = new HerzliaEnterpriseProxy();
+      HerzliaEnterpriseProxy herzliaEnterpriseProxy = new HerzliaEnterpriseProxy(new USAExporter());
       herzliaEnterpriseProxy.buildVehicle(new Bike(EVehicleModel.HONDA));
       herzliaEnterpriseProxy.buildVehicle(new Bike(EVehicleModel.HONDA));
       herzliaEnterpriseProxy.buildVehicle(new Bike(EVehicleModel.MAZDA));
@@ -30,7 +31,7 @@ public class TestPatterns {
 
 
        IVehicle vehicle = herzliaEnterpriseProxy.getVehicle(EVehicleType.BIKE);
-//       HerzliaWarehouse herzliaWarehouse = new HerzliaWarehouse(new USAExporter());
+//       Herzlia herzliaWarehouse = new Herzlia(new USAExporter());
 //       herzliaWarehouse.sellCar(vehicle);
 //
 //       vehicle = herzliaEnterpriseProxy.getVehicle(EVehicleType.TRUCK);
